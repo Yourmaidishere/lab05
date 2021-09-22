@@ -7,8 +7,6 @@ enable_testing()
 add_subdirectory(third-party/gtest)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-add_library(lib1 Account.h Account.cpp)
-add_library(lib2 Transaction.h Transaction.cpp)
 add_executable(runUnitTests test.cpp)
 target_compile_options(runUnitTests PRIVATE --coverage)
 target_link_libraries(runUnitTests PRIVATE --coverage gtest gtest_main)
